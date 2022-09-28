@@ -1,4 +1,4 @@
-namespace RoadTrain
+﻿namespace RoadTrain
 {
     internal static class Program
     {
@@ -6,13 +6,13 @@ namespace RoadTrain
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        //comment
+
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new FormRoadTrain());
         }
     }
 }
