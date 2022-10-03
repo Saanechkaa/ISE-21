@@ -13,11 +13,11 @@ namespace RoadTrain
         /// </summary>
         public EntityRoadTrain RoadTrain { private set; get; }
         /// <summary>
-        /// Левая координата отрисовки автомобиля
+        /// Левая координата отрисовки грузовика
         /// </summary>
         private float _startPosX;
         /// <summary>
-        /// Верхняя кооридната отрисовки автомобиля
+        /// Верхняя кооридната отрисовки грузовика
         /// </summary>
         private float _startPosY;
         /// <summary>
@@ -29,18 +29,18 @@ namespace RoadTrain
         /// </summary>
         private int? _pictureHeight = null;
         /// <summary>
-        /// Ширина отрисовки автомобиля
+        /// Ширина отрисовки грузовика
         /// </summary>
         private readonly int _RoadTrainWidth = 305;
         /// <summary>
-        /// Высота отрисовки автомобиля
+        /// Высота отрисовки грузовика
         /// </summary>
         private readonly int _RoadTrainHeight = 210;
         /// <summary>
         /// Инициализация свойств
         /// </summary>
         /// <param name="speed">Скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
+        /// <param name="weight">Вес грузовика</param>
         /// <param name="bodyColor">Цвет кузова</param>
         public void Init(int speed, float weight, Color bodyColor)
         {
@@ -48,7 +48,7 @@ namespace RoadTrain
             RoadTrain.Init(speed, weight, bodyColor);
         }
         /// <summary>
-        /// Установка позиции автомобиля
+        /// Установка позиции грузовика
         /// </summary>
         /// <param name="x">Координата X</param>
         /// <param name="y">Координата Y</param>
@@ -105,7 +105,7 @@ namespace RoadTrain
             }
         }
         /// <summary>
-        /// Отрисовка автомобиля
+        /// Отрисовка грузовика
         /// </summary>
         /// <param name="g"></param>
         public void DrawTransport(Graphics g)

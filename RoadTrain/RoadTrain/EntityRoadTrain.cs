@@ -21,16 +21,23 @@ namespace RoadTrain
         /// </summary>
         public Color BodyColor { get; private set; }
         /// <summary>
-        /// Шаг перемещения автомобиля
+        /// Шаг перемещения грузовика
         /// </summary>
-        public float Step => Speed * 100 / Weight;  
+        public float Step => Speed * 100 / Weight;
         /// <summary>
-        /// Инициализация полей объекта-класса автомобиля
+        /// Инициализация полей объекта-класса грузовика
         /// </summary>
         /// <param name="speed"></param>
         /// <param name="weight"></param>
         /// <param name="bodyColor"></param>
         /// <returns></returns>
+        public EntityRoadTrain(int speed, float weight, Color bodyColor)
+        {
+            Random rnd = new();
+            Speed = speed <= 0 ? rnd.Next(50, 150) : speed;
+            Weight = weight <= 0 ? rnd.Next(40, 70) : weight;
+            BodyColor = bodyColor;
+        }
         public void Init(int speed, float weight, Color bodyColor)
         {
             Random rnd = new();

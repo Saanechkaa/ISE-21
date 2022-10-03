@@ -17,9 +17,9 @@ namespace RoadTrain
         {
             InitializeComponent();
         }
-      
+
         /// <summary>
-        /// Метод прорисовки машины
+        /// Метод прорисовки грузовика
         /// </summary>
         private void Draw()
         {
