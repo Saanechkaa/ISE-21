@@ -21,11 +21,11 @@ namespace RoadTrain
         /// </summary>
         public Color BodyColor { get; private set; }
         /// <summary>
-        /// Шаг перемещения автомобиля
+        /// Шаг перемещения грузовика
         /// </summary>
-        public float Step => Speed * 100 / Weight;  
+        public float Step => Speed * 100 / Weight;
         /// <summary>
-        /// Инициализация полей объекта-класса автомобиля
+        /// Инициализация полей объекта-класса грузовика
         /// </summary>
         /// <param name="speed"></param>
         /// <param name="weight"></param>
