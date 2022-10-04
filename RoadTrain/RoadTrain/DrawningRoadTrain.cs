@@ -11,15 +11,15 @@ namespace RoadTrain
         /// <summary>
         /// Класс-сущность
         /// </summary>
-        public EntityRoadTrain RoadTrain { private set; get; }
+        public EntityRoadTrain RoadTrain { protected set; get; }
         /// <summary>
         /// Левая координата отрисовки грузовика
         /// </summary>
-        private float _startPosX;
+        protected float _startPosX;
         /// <summary>
         /// Верхняя кооридната отрисовки грузовика
         /// </summary>
-        private float _startPosY;
+        protected float _startPosY;
         /// <summary>
         /// Ширина окна отрисовки
         /// </summary>
@@ -31,21 +31,14 @@ namespace RoadTrain
         /// <summary>
         /// Ширина отрисовки грузовика
         /// </summary>
-        private readonly int _RoadTrainWidth = 305;
+        private readonly int _RoadTrainWidth = 185;
         /// <summary>
         /// Высота отрисовки грузовика
         /// </summary>
-        private readonly int _RoadTrainHeight = 210;
-        /// <summary>
-        /// Инициализация свойств
-        /// </summary>
-        /// <param name="speed">Скорость</param>
-        /// <param name="weight">Вес грузовика</param>
-        /// <param name="bodyColor">Цвет кузова</param>
-        public void Init(int speed, float weight, Color bodyColor)
+        private readonly int _RoadTrainHeight = 155;
+        public DrawningRoadTrain(int speed, float weight, Color bodyColor)
         {
-            RoadTrain = new EntityRoadTrain();
-            RoadTrain.Init(speed, weight, bodyColor);
+            RoadTrain = new EntityRoadTrain(speed, weight, bodyColor);
         }
         /// <summary>
         /// Установка позиции грузовика
@@ -105,35 +98,46 @@ namespace RoadTrain
             }
         }
         /// <summary>
+        /// Инициализация свойств
+        /// </summary>
+        /// <param name="speed">Скорость</param>
+        /// <param name="weight">Вес автомобиля</param>
+        /// <param name="bodyColor">Цвет кузова</param>
+        /// <param name="carWidth">Ширина отрисовки автомобиля</param>
+        /// <param name="carHeight">Высота отрисовки автомобиля</param>
+        protected DrawningRoadTrain(int speed, float weight, Color bodyColor, int RoadTrainWidth, int RoadTrainHeight) :
+        this(speed, weight, bodyColor)
+        {
+            _RoadTrainWidth = RoadTrainWidth;
+            _RoadTrainHeight = RoadTrainHeight;
+        }
+       
+        /// <summary>
         /// Отрисовка грузовика
         /// </summary>
         /// <param name="g"></param>
-        public void DrawTransport(Graphics g)
+        public virtual void DrawTransport(Graphics g)
         {
- 
             Brush mainColor = new SolidBrush(RoadTrain?.BodyColor ?? Color.Black);
             Brush brBlack = new SolidBrush(Color.Black);
             Brush brGray = new SolidBrush(Color.Gray);
             Brush brBlue = new SolidBrush(Color.Blue);
-            Brush brYellow = new SolidBrush(Color.Yellow);
-            Brush brBrown = new SolidBrush(Color.Brown);
             Pen pen = new Pen(Color.Black);
-
-            g.FillRectangle(brBlack, _startPosX, _startPosY + 130, 305, 20); //Платформа
-            g.DrawRectangle(pen, _startPosX, _startPosY + 130, 305, 20);   
-            g.FillRectangle(mainColor, _startPosX + 180, _startPosY, 120, 130);//Кабина
-            g.DrawRectangle(pen, _startPosX + 180, _startPosY, 120, 130);
-            g.FillRectangle(brBlue, _startPosX + 220, _startPosY + 20, 70, 70);//Окно
-            g.DrawRectangle(pen, _startPosX + 220, _startPosY + 20, 70, 70);
-            g.FillEllipse(brGray, _startPosX, _startPosY + 150, 60, 60);//Колёса
-            g.DrawEllipse(pen, _startPosX, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 10, _startPosY + 160, 40, 40);
-            g.FillEllipse(brGray, _startPosX + 65, _startPosY + 150, 60, 60);
-            g.DrawEllipse(pen, _startPosX + 65, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 75, _startPosY + 160, 40, 40);
-            g.FillEllipse(brGray, _startPosX + 220, _startPosY + 150, 60, 60);
-            g.DrawEllipse(pen, _startPosX + 220, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 230, _startPosY + 160, 40, 40);
+            g.FillRectangle(brBlack, _startPosX+15, _startPosY + 100, 185, 20); //Платформа
+            g.DrawRectangle(pen, _startPosX+15, _startPosY + 100, 185, 20);   
+            g.FillRectangle(mainColor, _startPosX + 125, _startPosY+10, 75, 90);//Кабина
+            g.DrawRectangle(pen, _startPosX + 125, _startPosY+10,75, 90);
+            g.FillRectangle(brBlue, _startPosX + 165, _startPosY + 30, 30, 50);//Окно
+            g.DrawRectangle(pen, _startPosX + 165, _startPosY + 30, 30, 50);
+            g.FillEllipse(brGray, _startPosX+15, _startPosY + 120, 40, 40);//Колёса
+            g.DrawEllipse(pen, _startPosX+15, _startPosY + 120, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 20, _startPosY + 125, 30, 30);
+            g.FillEllipse(brGray, _startPosX + 60, _startPosY + 120, 40, 40);
+            g.DrawEllipse(pen, _startPosX + 60, _startPosY + 120, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 65, _startPosY + 125, 30, 30);
+            g.FillEllipse(brGray, _startPosX + 155, _startPosY + 120, 40, 40);
+            g.DrawEllipse(pen, _startPosX + 155, _startPosY + 120, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 160, _startPosY + 125, 30, 30);
             
         }
         /// <summary>
@@ -159,6 +163,14 @@ namespace RoadTrain
             {
                 _startPosY = _pictureHeight.Value - _RoadTrainHeight;
             }
+        }
+        /// <summary>
+        /// Получение текущей позиции объекта
+        /// </summary>
+        /// <returns></returns>
+        public (float Left, float Top, float Right, float Bottom) GetCurrentPosition()
+        {
+            return (_startPosX, _startPosY, _startPosX + _RoadTrainWidth, _startPosY + _RoadTrainHeight);
         }
     }
 }
