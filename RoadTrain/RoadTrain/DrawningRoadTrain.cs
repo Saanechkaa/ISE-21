@@ -56,7 +56,12 @@ namespace RoadTrain
         /// <param name="height">Высота картинки</param>
         public void SetPosition(int x, int y, int width, int height)
         {
-            // TODO проверки
+            if (x < 0 || y < 0 || width < x + _pictureWidth || height < y + _pictureHeight)
+            {
+                _pictureHeight = null;
+                _pictureWidth = null;
+                return;
+            }
             _startPosX = x;
             _startPosY = y;
             _pictureWidth = width;
