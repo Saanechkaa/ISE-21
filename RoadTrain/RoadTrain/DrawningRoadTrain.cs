@@ -31,11 +31,11 @@ namespace RoadTrain
         /// <summary>
         /// Ширина отрисовки грузовика
         /// </summary>
-        private readonly int _RoadTrainWidth = 305;
+        private readonly int _RoadTrainWidth = 185;
         /// <summary>
         /// Высота отрисовки грузовика
         /// </summary>
-        private readonly int _RoadTrainHeight = 210;
+        private readonly int _RoadTrainHeight = 150;
         /// <summary>
         /// Инициализация свойств
         /// </summary>
@@ -119,22 +119,22 @@ namespace RoadTrain
             Brush brBrown = new SolidBrush(Color.Brown);
             Pen pen = new Pen(Color.Black);
 
-            g.FillRectangle(brBlack, _startPosX, _startPosY + 130, 305, 20); //Платформа
-            g.DrawRectangle(pen, _startPosX, _startPosY + 130, 305, 20);   
-            g.FillRectangle(mainColor, _startPosX + 180, _startPosY, 120, 130);//Кабина
-            g.DrawRectangle(pen, _startPosX + 180, _startPosY, 120, 130);
-            g.FillRectangle(brBlue, _startPosX + 220, _startPosY + 20, 70, 70);//Окно
-            g.DrawRectangle(pen, _startPosX + 220, _startPosY + 20, 70, 70);
-            g.FillEllipse(brGray, _startPosX, _startPosY + 150, 60, 60);//Колёса
-            g.DrawEllipse(pen, _startPosX, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 10, _startPosY + 160, 40, 40);
-            g.FillEllipse(brGray, _startPosX + 65, _startPosY + 150, 60, 60);
-            g.DrawEllipse(pen, _startPosX + 65, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 75, _startPosY + 160, 40, 40);
-            g.FillEllipse(brGray, _startPosX + 220, _startPosY + 150, 60, 60);
-            g.DrawEllipse(pen, _startPosX + 220, _startPosY + 150, 60, 60);
-            g.FillEllipse(brBlack, _startPosX + 230, _startPosY + 160, 40, 40);
-            
+            g.FillRectangle(brBlack, _startPosX, _startPosY + 90, 185, 20); //Платформа
+            g.DrawRectangle(pen, _startPosX, _startPosY + 90, 185, 20);
+            g.FillRectangle(mainColor, _startPosX + 110, _startPosY, 75, 90);//Кабина
+            g.DrawRectangle(pen, _startPosX + 110, _startPosY, 75, 90);
+            g.FillRectangle(brBlue, _startPosX + 150, _startPosY + 20, 30, 50);//Окно
+            g.DrawRectangle(pen, _startPosX + 150, _startPosY + 20, 30, 50);
+            g.FillEllipse(brGray, _startPosX, _startPosY + 110, 40, 40);//Колёса
+            g.DrawEllipse(pen, _startPosX, _startPosY + 110, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 5, _startPosY + 115, 30, 30);
+            g.FillEllipse(brGray, _startPosX + 45, _startPosY + 110, 40, 40);
+            g.DrawEllipse(pen, _startPosX + 45, _startPosY + 110, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 50, _startPosY + 115, 30, 30);
+            g.FillEllipse(brGray, _startPosX + 140, _startPosY + 110, 40, 40);
+            g.DrawEllipse(pen, _startPosX + 140, _startPosY + 110, 40, 40);
+            g.FillEllipse(brBlack, _startPosX + 145, _startPosY + 115, 30, 30);
+
         }
         /// <summary>
         /// Смена границ формы отрисовки
