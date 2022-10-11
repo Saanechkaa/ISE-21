@@ -29,6 +29,17 @@ namespace RoadTrain
             pictureBoxRoadTrain.Image = bmp;
         }
         /// <summary>
+        /// Метод установки данных
+        /// </summary>
+        private void SetData()
+        {
+            Random rnd = new();
+            _RoadTrain.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxRoadTrain.Width, pictureBoxRoadTrain.Height);
+            toolStripStatusLabelSpeed.Text = $"Скорость: {_RoadTrain.RoadTrain.Speed}";
+            toolStripStatusLabelWeight.Text = $"Вес: {_RoadTrain.RoadTrain.Weight}";
+            toolStripStatusLabelBodyColor.Text = $"Цвет: {_RoadTrain.RoadTrain.BodyColor.Name}";
+        }
+        /// <summary>
         /// Обработка нажатия кнопки "Создать"
         /// </summary>
         /// <param name="sender"></param>
@@ -36,14 +47,8 @@ namespace RoadTrain
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new();
-            _RoadTrain = new DrawningRoadTrain();
-            _RoadTrain.Init(rnd.Next(100, 300), rnd.Next(1000, 2000),
-            Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-            _RoadTrain.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100),
-            pictureBoxRoadTrain.Width, pictureBoxRoadTrain.Height);
-            toolStripStatusLabelSpeed.Text = $"Скорость: {_RoadTrain.RoadTrain.Speed}";
-            toolStripStatusLabelWeight.Text = $"Вес: {_RoadTrain.RoadTrain.Weight}";
-            toolStripStatusLabelBodyColor.Text = $"Цвет: {_RoadTrain.RoadTrain.BodyColor.Name}";
+            _RoadTrain = new DrawningRoadTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
+            SetData();
             Draw();
         }
 
@@ -83,6 +88,5 @@ namespace RoadTrain
             _RoadTrain?.ChangeBorders(pictureBoxRoadTrain.Width, pictureBoxRoadTrain.Height);
             Draw();
         }
-
     }
 }
