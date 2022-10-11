@@ -106,17 +106,16 @@ namespace RoadTrain
         /// Инициализация свойств
         /// </summary>
         /// <param name="speed">Скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
+        /// <param name="weight">Вес грузовика</param>
         /// <param name="bodyColor">Цвет кузова</param>
-        /// <param name="carWidth">Ширина отрисовки автомобиля</param>
-        /// <param name="carHeight">Высота отрисовки автомобиля</param>
+        /// <param name="carWidth">Ширина отрисовки грузовика</param>
+        /// <param name="carHeight">Высота отрисовки грузовика</param>
         protected DrawningRoadTrain(int speed, float weight, Color bodyColor, int RoadTrainWidth, int RoadTrainHeight) :
         this(speed, weight, bodyColor)
         {
             _RoadTrainWidth = RoadTrainWidth;
             _RoadTrainHeight = RoadTrainHeight;
         }
-       
         /// <summary>
         /// Отрисовка грузовика
         /// </summary>

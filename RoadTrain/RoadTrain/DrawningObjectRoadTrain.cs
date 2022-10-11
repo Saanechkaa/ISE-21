@@ -18,8 +18,6 @@ namespace RoadTrain
         {
             return _roadTrain?.GetCurrentPosition() ?? default;
         }
-        
-
         public void MoveObject(Direction direction)
         {
             _roadTrain?.MoveTransport(direction);
@@ -32,7 +30,5 @@ namespace RoadTrain
         {
             _roadTrain.DrawTransport(g);
         }
-
-
     }
 }

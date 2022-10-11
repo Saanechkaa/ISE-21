@@ -16,7 +16,7 @@ namespace RoadTrain
         /// Инициализация свойств
         /// </summary>
         /// <param name="speed">Скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
+        /// <param name="weight">Вес грузовика</param>
         /// <param name="bodyColor">Цвет кузова</param>
         /// <param name="dopColor">Дополнительный цвет</param>
         /// <param name="waterTank">Признак наличия водяного бака</param>

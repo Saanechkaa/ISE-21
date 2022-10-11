@@ -9,7 +9,6 @@ namespace RoadTrain
     /// <summary>
     /// Класс-сущность "Подметально-уборочная машина"
     /// </summary>
-
     internal class EntitySweeperRoadTrain : EntityRoadTrain
     {
         /// <summary>
@@ -28,12 +27,11 @@ namespace RoadTrain
         /// Инициализация свойств
         /// </summary>
         /// <param name="speed">Скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
+        /// <param name="weight">Вес грузовика</param>
         /// <param name="bodyColor">Цвет кузова</param>
         /// <param name="dopColor">Дополнительный цвет</param>
-        /// <param name="bodyKit">Признак наличия обвеса</param>
-        /// <param name="wing">Признак наличия антикрыла</param>
-        /// <param name="sportLine">Признак наличия гоночной полосы</param>
+        /// <param name="waterTank">Признак водяного бака</param>
+        /// <param name="sweepingBush">Признак подметательной щётки</param>
         public EntitySweeperRoadTrain(int speed, float weight, Color bodyColor, Color
        dopColor, bool waterTank, bool sweepingBush) :
         base(speed, weight, bodyColor)
@@ -42,6 +40,5 @@ namespace RoadTrain
             WaterTank = waterTank;
             SweepingBush = sweepingBush;
         }
-
     }
 }

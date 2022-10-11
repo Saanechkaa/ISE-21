@@ -50,7 +50,6 @@ namespace RoadTrain
         }
         public Bitmap MoveObject(Direction direction)
         {
-            // TODO проверка, что объект может переместится в требуемом направлении
             _drawningObject.MoveObject(direction);
             (float Left, float Top, float Right, float Bottom) = _drawningObject.GetCurrentPosition();
             if (CheckBarrier(Left, Top, Right, Bottom))
