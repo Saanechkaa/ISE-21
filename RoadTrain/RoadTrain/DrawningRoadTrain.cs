@@ -142,7 +142,6 @@ namespace RoadTrain
             g.FillEllipse(brGray, _startPosX + 155, _startPosY + 120, 40, 40);
             g.DrawEllipse(pen, _startPosX + 155, _startPosY + 120, 40, 40);
             g.FillEllipse(brBlack, _startPosX + 160, _startPosY + 125, 30, 30);
-            
         }
         /// <summary>
         /// Смена границ формы отрисовки
